@@ -2,7 +2,8 @@ from pwn import *
 
 context(log_level="debug")
 
-p = process('./pwn2')
+# p = process('./pwn2')
+p = remote('127.0.0.1',10089)
 elf = ELF("pwn2")
 system_plt = elf.symbols["system"]
 scanf_plt = elf.symbols["__isoc99_scanf"]
